@@ -4,7 +4,7 @@ export default function Nav() {
     return (
         <nav>
             <section className="nav">
-            <NavLink className="homeBtn" to="/" end >
+            <NavLink className="homeBtn" to="/home" >
             <img className="homeBttns" src="image/homebtn.webp" alt="homebuttonastronaut"/>
             </NavLink>
             <div className="navText">

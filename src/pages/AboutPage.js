@@ -1,10 +1,5 @@
-import Art from "../components/Art";
-import Book from "../components/Book";
-import Cook from "../components/Cook";
-import Social from "../components/Social";
-import Game from "../components/Game";
-
 export default function AboutPage() {
+
 
     return (
         <main>
@@ -16,7 +11,6 @@ export default function AboutPage() {
             </section>
 
             <section className="aboutSkill">
-                <h2>Skillset</h2>
                 <h3>Technical Skills</h3>
                 <div className="skills">
                     <div className="firstS skillbox">
@@ -112,14 +106,30 @@ export default function AboutPage() {
                 </div>
                 </section>
                 <section className="interestBox">
-                    <h2>My interests</h2>
-                    <div className="interestBtn">
-                        <Art className = "artBtn"/>
-                        <Book className = "artBtn"/>
-                        <Game className = "artBtn"/>
-                        <Social className = "artBtn"/>
-                        <Cook className = "artBtn"/>
-                    </div>
+                    <h2>Things About Me</h2>
+                    <section className="interests">
+                        <div>
+                            <img src="image/art.webp" alt="artpalette"/>
+                            <p>Art is something I can express myself through. I enjoy creating new ideas and watch them come to reality. Usually, I like to have some side art projects, because I can clear out my head while listening to some cool music.</p>
+                        </div>
+                        <div>
+                            <img src="image/book.webp" alt="book"/>
+                            <p>I really enjoy reading, learning about new stories and also creating them by myself. I have one published novel yet, in Hungarian, but I would really like to dig myself deeper into English (maybe later Danish) writing too.</p>
+                        </div>
+                        <div>
+                            <img src="image/cook.webp" alt="cookingtools"/>
+                            <p>Cooking and baking come from family for me. I always like to treat people with a nice meal, especially showing them my Hungarian recipes. Each country has something special so it’s always nice to share some from our own culture.</p>
+                        </div>
+                        <div>
+                            <img src="image/social.png" alt="threefriends"/>
+                            <p>Socializing takes an important part in my life. I am more an extroverted person who really enjoy meeting with new people, sharing moments and build relationships. I like to go out either just to eat but also a fan of longer trips, or camping.</p>
+                        </div>
+                        <div>
+                            <img  src="image/die.webp" alt="die"/>
+                            <p>Board games really can bring people together. For me it’s one of the most enjoyable activities to do with friends and colleagues to gather and play while sharing stories and laugh.</p>
+                        </div>
+
+                    </section>
                 </section>
         </main>
     )

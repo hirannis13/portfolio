@@ -1,12 +1,65 @@
-html {
-  background-image: linear-gradient(to bottom right, rgb(22, 32, 37), rgb(36, 35, 35));
-  background-repeat: no-repeat;
-  margin: 0;
+@font-face {
+  font-family: "Caveat-Regular";
+  src: url("../public/fonts/Caveat-Regular.ttf");
+  font-weight:400;
 }
 
-p, h1, h2, h3, h4, li {
+@font-face {
+  font-family: "Reem-Kufil";
+  src: url("../public/fonts/ReemKufiFun-Regular.ttf");
+  font-weight:10;
+}
+
+/* ^^^^^^^^^^^ FONTS ^^^^^^^^^^ */
+
+::-webkit-scrollbar {
+  width: 1.5vw;
+  background-color: #151c24;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 133, 149); 
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #85e2d2; 
+}
+
+/* ^^^^^^^^^^^ SCROLLBAR ^^^^^^^^^^ */
+
+html {
+  background-image: linear-gradient(to bottom right, rgb(26, 38, 44), rgb(26, 28, 40));
+  background-repeat: no-repeat;
+  margin: 0;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+/* ^^^^^^^^^^^ BASIC HTML ^^^^^^^^^^ */
+
+p, h1, h3, h4, li {
   color: white;
 }
+
+h2 {
+  color: rgb(226, 133, 148);
+}
+
+.details {
+  color: white;
+  font-family: Reem-Kufil;
+}
+
+h1,h2,h3{
+  font-family: Caveat-Regular;
+}
+
+p,h4, li{
+  font-family: Reem-Kufil;
+}
+
+/* ^^^^^^^^^^^ BASIC TEXT ^^^^^^^^^^ */
 
 /* NAVIGATION START */
 .nav {
@@ -16,11 +69,14 @@ p, h1, h2, h3, h4, li {
 
 .navText a{
   text-decoration: none;
-  padding: 2vw;
-  padding-top: 5vw;
+  margin: 2vw;
+  padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+  margin-top: 5vw;
   font-size: 2.5vw;
   color: rgb(226, 133, 149);
 }
+
+/* `````````````````````` */
 
 .homeBttns {
     height: 5vw;
@@ -30,12 +86,14 @@ p, h1, h2, h3, h4, li {
 }
 
 .homeBttns:hover{
-  filter: drop-shadow( rgb(226, 133, 149) 0 0 0.5vw);
+  filter: drop-shadow( #85e2d2 0 0 0.5vw);
 }
 
 .homeBtn.active {
-  filter: drop-shadow(rgba(167, 48, 68) 0 0 0.7vw);
+  filter: drop-shadow(#85e2d2 0 0 0.7vw);
 }
+
+/* `````````````````````` */
 
 .nav img {
   height: 5vw;
@@ -45,11 +103,11 @@ p, h1, h2, h3, h4, li {
 }
 
 .navText a:hover {
-  color: rgb(167, 48, 68);
+  color: #85e2d2;
 }
 
 .nav a.active {
-  color: rgb(167, 48, 68);
+  color: rgb(31, 197, 200);
   text-shadow: 0.2vw 0.2vw rgb(226, 133, 149);
 }
 
@@ -59,23 +117,25 @@ p, h1, h2, h3, h4, li {
   margin-right: 7vw;
 }
 
+/* `````````````````````` */
+
 .contact img {
   width: 4vw;
   padding: 2vw 1.5vw 2vw 1.5vw;
 }
 
 .contact {
-  border: 0.1vw solid rgb(226, 133, 149);
+  border: 0.1vw solid #85e2d2;
   border-radius: 50%;
-  right: 0;
+  right: 3vw;
   bottom: 3vw;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
 }
 
 .contact:hover{
   cursor: pointer;
-  background-color: rgb(167, 48, 68);
+  background-color: #85e2d2;
 }
 
 
@@ -87,49 +147,76 @@ p, h1, h2, h3, h4, li {
   display: flex;
 }
 
-
 .introText {
-  margin: 9vw 0 0 9vw;
+  margin: 7vw 0 0 9vw;
 }
+
+/* `````````````````````` */
 
 .introText h1 {
-  font-size: 5.5vw;
+  font-size: 6vw;
   margin: 0 0 1vw 0;
+  animation-name: animHello;
+  animation-duration: 1s;
+  color: #85e2d2;
 }
 
+@keyframes animHello {
+  from {opacity: 0;};
+  to {opacity:100%};
+}
+
+/* `````````````````````` */
 
 .introText h2 {
-  font-size: 3.5vw;
-  margin: 0 0 0 1vw;
+  color: #85e2d2;
+  font-size: 4.5vw;
+  margin: 0 0 0 0;
+  animation-name: animMyName;
+  animation-duration:1.5s;
 }
 
-.myName {
-  color: rgb(226, 133, 149);
-  text-shadow: 0.3vw 0.3vw rgb(167, 48, 68);
-  animation-name: h2anim;
-  position: relative;
-  animation-duration: 2s;
+@keyframes animMyName {
+  0% {opacity: 0;}
+  50% {opacity: 0;};
+  100% {opacity:100%};
 }
 
-
-@keyframes h2anim {
-  from {opacity: 0%; right:0vw; left:50vw; top:0vw; bottom: 0vw;} 
-  to {opacity: 100%; right:0vw; left:0vw; top:0; bottom: 0vw; }
-}
+/* `````````````````````` */
 
 .introText p {
   font-size: 1.5vw;
   width: 80%;
-  margin: 1vw 0 0 1vw;
-  animation-name: panim;
+  margin: 1vw 0 0 0;
+  animation-name: animText;
   position: relative;
-  animation-duration: 4s;
+  animation-duration: 2.2s;
 }
 
-@keyframes panim {
-  from {opacity: 0%;} 
-  to {opacity: 100%;}
+@keyframes animText{
+  0% {left: 0; right: 0; top: 10vw; bottom: 0; opacity: 0;}
+  50% {left: 0; right: 0; top: 10vw; bottom: 0; opacity: 0;}
+  100% {left: 0; right: 0; top: 0; bottom: 0;}
 }
+
+/* `````````````````````` */
+
+.myName {
+  color: rgb(226, 133, 149);
+  font-size: 6vw;
+  text-shadow: 0.3vw 0.3vw #85e2d2;
+  animation-name: animName;
+  position: relative;
+  animation-duration: 2s;
+}
+
+@keyframes animName {
+  0% {left: 50vw; right: 0; top: 0; bottom: 0; opacity: 0;}
+  50% {left: 50vw; right: 0; top: 0; bottom: 0; opacity: 0;}
+  100% {left: 0; right: 0; top: 0; bottom: 0;}
+}
+
+/* `````````````````````` */
 
 .sideBttns img {
   height: auto;
@@ -144,38 +231,38 @@ p, h1, h2, h3, h4, li {
  margin: 10vw 0 0 1vw;
 }
 
-.pictureMe {
-  height: 30vw;
-  float: right;
-  margin: 10.65vw 10vw 0 0;
+.sideBttns a:hover {
+  filter: drop-shadow(#85e2d2 0 0 0.7vw);
 }
+
+/* `````````````````````` */
+
+.pictureMe {
+  height: 38vw;
+  float: right;
+  margin: 1vw 12vw 0 0;
+}
+
 /* WELCOME PAGE END */
 
 
 /* ABOUTPAGE START */
+.aboutIntro {
+  margin: 5vw 14vw 0 14vw;
+  animation: animIntro 2s;
+}
+
 .aboutIntro p{
   text-align: left;
-  margin: 0 10% 0 10%;
+  font-size: 1.5vw;
 }
 
 .aboutIntro h2 {
   text-align: center;
-  margin: 0 10% 0 10%;
+  font-size: 3.5vw;
+  color: rgb(226, 133, 148);
 }
 
-.aboutIntro {
-  margin: 5vw 0 0 0;
-}
-
-.aboutIntro p{
-  padding: 2vw 5vw 0 5vw;
-  font-size: 1.5vw;
-  line-height: 1.9vw;
-}
-
-.aboutIntro h2{
-  font-size: 2.5vw;
-}
 
 /* ````````````````````` */
 
@@ -208,16 +295,14 @@ p, h1, h2, h3, h4, li {
 
 /* ````````````````````` */
 
-.aboutSkill h2 {
-  font-size: 2.5vw;
-  text-align: center;
-  margin: 10vw 0 0 0;
+.aboutSkill {
+  margin: 20vw 0 0 0;
 }
-
 .aboutSkill h3 {
-  font-size: 2vw;
+  font-size: 3vw;
   text-align: center;
   margin: 7vw 0 5vw 0;
+  color: rgb(226, 133, 148);
 }
 
 .aboutSkill h4 {
@@ -229,31 +314,157 @@ p, h1, h2, h3, h4, li {
   font-size: 1.3vw;
 }
 
+.aboutSkill li::marker {
+  color: #85e2d2;
+}
+
 .firstS, .secondS, .thirdS {
-  border-right: solid 0.06vw rgb(226, 133, 149);
+  border-right: solid 0.06vw #85e2d2;
 }
 
 /* ````````````````````` */
 
+.interestBox h2{
+  text-align: center;
+  font-size: 3vw;
+}
 
-.interestBtn button{
-  font-size: 4vw;
-  background-color: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
+.interestBox{
+  margin: 15vw 10vw 5vw 10vw;
+}
+
+.interests img{
+  width: 5vw;
+  height: 5vw;
+}
+
+.interests{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.interests div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 25%;
+  margin: 3vw 3vw 0 3vw;
+  border-bottom: solid 0.06vw #85e2d2;
+}
+/* ABOUTPAGE END */ 
+
+
+/* PROJECTPAGE START */
+.projectIntro{
+  margin: 5vw 14vw 0 14vw;
+  animation: animIntro 2s;
+}
+
+@keyframes animIntro {
+  from {opacity: 0;}
+  to {opacity: 100%;}
+}
+
+.projectIntro h2{
+  text-align: center;
+  font-size: 3.5vw;
+}
+
+.projectIntro p{
+  text-align: left;
+  font-size: 1.5vw;
 }
 
 
 
-.interestBox h2 {
-  font-size: 2.5vw;
-  margin: 10vw 0 5vw 0;
+/* ````````````````````````` */
+
+.projectBox {
+  display: flex;
+  flex-direction: row;
+  margin: 15vw 3vw 5vw 0;
+  padding: 3vw 0 3vw 0;
+}
+
+.projectBox:nth-child(2n) > .projectLeft img {
+  filter: drop-shadow( #85e2d276  0 1vw 0.5vw);
+}
+
+/* ````````````````````````` */
+
+.projectLeft img {
+  width: 30vw;
+  height:38vw;
+  object-fit: cover;
+  margin: 0 5vw 0 0.5vw;
+  filter: drop-shadow( rgba(226, 133, 148, 0.499) 0 1vw 0.5vw);
+}
+
+/* ````````````````````````` */
+
+.projectTitle {
+  text-align: center;
+  margin: 0;
+  font-size: 3.5vw;
+  font-size: 2vw;
   text-align: center;
 }
 
+.projectTitle h2{
+  margin: 0;
+}
 
-/* ABOUTPAGE END */ 
+.projectContent {
+  font-size: 1.3vw;
+  margin: 2vw 0 0 0;
+}
+
+.icon{
+  width: 4vw;
+  display: flex;
+  margin: 0 0 1vw 0;
+}
+
+.projectIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 3vw 0 0 0;
+}
+
+.projectIcons div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 4vw 0 4vw;
+}
+
+.projectIcons div a {
+  text-decoration: none;
+  font-family: Reem-Kufil;
+  color: white;
+  font-size: 1.3vw;
+}
+
+.projectIcons div a:hover {
+  color: #85e2d2;
+}
+
+
+.projectIcons div span {
+  color: white;
+  font-size: 1.3vw;
+  
+}
+
+
+
+
+
+
+
+/* PROJECTPAGE END */
 
 
 
